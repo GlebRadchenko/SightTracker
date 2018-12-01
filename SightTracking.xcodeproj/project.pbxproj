@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F72BB32621B1A91D005EF53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BB32521B1A91D005EF53F /* AppDelegate.swift */; };
+		F72BB32A21B1A91D005EF53F /* SightTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BB32921B1A91D005EF53F /* SightTrackingViewController.swift */; };
+		F72BB32D21B1A91D005EF53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72BB32B21B1A91D005EF53F /* Main.storyboard */; };
+		F72BB32F21B1A91F005EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F72BB32E21B1A91F005EF53F /* Assets.xcassets */; };
+		F72BB33221B1A91F005EF53F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72BB33021B1A91F005EF53F /* LaunchScreen.storyboard */; };
+		F74C332321B1AD45009EBF5D /* FaceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74C332221B1AD45009EBF5D /* FaceTracker.swift */; };
+		F74C332621B1BCF3009EBF5D /* HeadNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74C332521B1BCF3009EBF5D /* HeadNode.swift */; };
+		F74C332A21B1E2AD009EBF5D /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74C332921B1E2AD009EBF5D /* SCNVector3+Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F72BB32221B1A91D005EF53F /* SightTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SightTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F72BB32521B1A91D005EF53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F72BB32921B1A91D005EF53F /* SightTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightTrackingViewController.swift; sourceTree = "<group>"; };
+		F72BB32C21B1A91D005EF53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F72BB32E21B1A91F005EF53F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F72BB33121B1A91F005EF53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F72BB33321B1A91F005EF53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F74C332221B1AD45009EBF5D /* FaceTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTracker.swift; sourceTree = "<group>"; };
+		F74C332521B1BCF3009EBF5D /* HeadNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadNode.swift; sourceTree = "<group>"; };
+		F74C332921B1E2AD009EBF5D /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F72BB31F21B1A91D005EF53F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F72BB31921B1A91D005EF53F = {
+			isa = PBXGroup;
+			children = (
+				F72BB32421B1A91D005EF53F /* SightTracking */,
+				F72BB32321B1A91D005EF53F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F72BB32321B1A91D005EF53F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F72BB32221B1A91D005EF53F /* SightTracking.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F72BB32421B1A91D005EF53F /* SightTracking */ = {
+			isa = PBXGroup;
+			children = (
+				F74C332921B1E2AD009EBF5D /* SCNVector3+Extensions.swift */,
+				F74C332421B1BCD8009EBF5D /* Nodes */,
+				F74C332121B1AD35009EBF5D /* FaceTracker */,
+				F72BB32521B1A91D005EF53F /* AppDelegate.swift */,
+				F72BB32921B1A91D005EF53F /* SightTrackingViewController.swift */,
+				F72BB32B21B1A91D005EF53F /* Main.storyboard */,
+				F72BB32E21B1A91F005EF53F /* Assets.xcassets */,
+				F72BB33021B1A91F005EF53F /* LaunchScreen.storyboard */,
+				F72BB33321B1A91F005EF53F /* Info.plist */,
+			);
+			path = SightTracking;
+			sourceTree = "<group>";
+		};
+		F74C332121B1AD35009EBF5D /* FaceTracker */ = {
+			isa = PBXGroup;
+			children = (
+				F74C332221B1AD45009EBF5D /* FaceTracker.swift */,
+			);
+			path = FaceTracker;
+			sourceTree = "<group>";
+		};
+		F74C332421B1BCD8009EBF5D /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				F74C332521B1BCF3009EBF5D /* HeadNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F72BB32121B1A91D005EF53F /* SightTracking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F72BB33621B1A91F005EF53F /* Build configuration list for PBXNativeTarget "SightTracking" */;
+			buildPhases = (
+				F72BB31E21B1A91D005EF53F /* Sources */,
+				F72BB31F21B1A91D005EF53F /* Frameworks */,
+				F72BB32021B1A91D005EF53F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SightTracking;
+			productName = SightTracking;
+			productReference = F72BB32221B1A91D005EF53F /* SightTracking.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F72BB31A21B1A91D005EF53F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Gleb Radchenko";
+				TargetAttributes = {
+					F72BB32121B1A91D005EF53F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = F72BB31D21B1A91D005EF53F /* Build configuration list for PBXProject "SightTracking" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F72BB31921B1A91D005EF53F;
+			productRefGroup = F72BB32321B1A91D005EF53F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F72BB32121B1A91D005EF53F /* SightTracking */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F72BB32021B1A91D005EF53F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F72BB33221B1A91F005EF53F /* LaunchScreen.storyboard in Resources */,
+				F72BB32F21B1A91F005EF53F /* Assets.xcassets in Resources */,
+				F72BB32D21B1A91D005EF53F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F72BB31E21B1A91D005EF53F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F72BB32A21B1A91D005EF53F /* SightTrackingViewController.swift in Sources */,
+				F74C332621B1BCF3009EBF5D /* HeadNode.swift in Sources */,
+				F72BB32621B1A91D005EF53F /* AppDelegate.swift in Sources */,
+				F74C332321B1AD45009EBF5D /* FaceTracker.swift in Sources */,
+				F74C332A21B1E2AD009EBF5D /* SCNVector3+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F72BB32B21B1A91D005EF53F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F72BB32C21B1A91D005EF53F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F72BB33021B1A91F005EF53F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F72BB33121B1A91F005EF53F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F72BB33421B1A91F005EF53F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F72BB33521B1A91F005EF53F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F72BB33721B1A91F005EF53F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6V628BG2LL;
+				INFOPLIST_FILE = SightTracking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glebradchenko.SightTrackingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F72BB33821B1A91F005EF53F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6V628BG2LL;
+				INFOPLIST_FILE = SightTracking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glebradchenko.SightTrackingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F72BB31D21B1A91D005EF53F /* Build configuration list for PBXProject "SightTracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F72BB33421B1A91F005EF53F /* Debug */,
+				F72BB33521B1A91F005EF53F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F72BB33621B1A91F005EF53F /* Build configuration list for PBXNativeTarget "SightTracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F72BB33721B1A91F005EF53F /* Debug */,
+				F72BB33821B1A91F005EF53F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F72BB31A21B1A91D005EF53F /* Project object */;
+}
