@@ -16,14 +16,24 @@ class SightTrackingViewController: UIViewController {
     
     let tracker = FaceTracker()
     
+    lazy var pointer: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+        view.layer.cornerRadius = 16
+        view.backgroundColor = .blue
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         sceneView.delegate = self
         sceneView.showsStatistics = true
         
+        sceneView.addSubview(pointer)
+        
         tracker.configure(with: sceneView)
         tracker.debugLabel = debugLabel
+        tracker.pointer = pointer
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -15,6 +15,17 @@ extension SCNVector3: Hashable {
     public var hashValue: Int { return "\(x),\(y),\(z)".hashValue }
 }
 
+extension SCNVector3 {
+    func cgPoint(adjustScaleFactor: Bool = false) -> CGPoint {
+        if adjustScaleFactor {
+            let scale = UIScreen.main.scale
+            return CGPoint(x: CGFloat(x) / scale, y: CGFloat(y) / scale)
+        }
+        
+        return CGPoint(x: CGFloat(x), y: CGFloat(y))
+    }
+}
+
 extension SCNVector3: Equatable {
     static var zero: SCNVector3 {
         return SCNVector3Zero

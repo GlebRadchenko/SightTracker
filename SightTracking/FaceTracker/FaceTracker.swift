@@ -13,6 +13,7 @@ import SceneKit
 class FaceTracker {
     weak var view: ARSCNView!
     weak var debugLabel: UILabel?
+    weak var pointer: UIView?
     
     var pointOfView: SCNNode? {
         return view?.pointOfView
@@ -33,11 +34,10 @@ class FaceTracker {
         let screenGeometry = SCNPlane(width: 0.2, height: 0.2)
         let node = SCNNode(geometry: screenGeometry)
         
-        node.geometry?.firstMaterial?.diffuse.contents = UIColor.red
         node.geometry?.firstMaterial?.isDoubleSided = true
         node.name = "Phone plane"
         node.position = SCNVector3(0, 0, -0.03)
-        node.opacity = 0.1
+        node.opacity = 0
         
         return node
     }()
@@ -97,7 +97,7 @@ class FaceTracker {
         
         points.append(view.projectPoint(middle))
         
-        if points.count >= 50 {
+        if points.count >= 30 {
             dequeuePoints()
         }
     }
@@ -108,6 +108,10 @@ class FaceTracker {
         let cgPoint = point.cgPoint()
         
         debug(text: "x: \(Int(cgPoint.x)), y: \(Int(cgPoint.y))")
+        DispatchQueue.main.async {
+            self.pointer?.center = cgPoint.adjustedToScreenBounds()
+        }
+        
         
         points.removeFirst(5)
     }
@@ -165,13 +169,12 @@ extension FaceTracker {
     }
 }
 
-extension SCNVector3 {
-    func cgPoint(adjustScaleFactor: Bool = false) -> CGPoint {
-        if adjustScaleFactor {
-            let scale = UIScreen.main.scale
-            return CGPoint(x: CGFloat(x) / scale, y: CGFloat(y) / scale)
-        }
+extension CGPoint {
+    func adjustedToScreenBounds() -> CGPoint {
+        let bounds = UIScreen.main.bounds
+        let newX = max(min(x, bounds.width), 0)
+        let newY = max(min(y, bounds.height), 0)
         
-        return CGPoint(x: CGFloat(x), y: CGFloat(y))
+        return CGPoint(x: newX, y: newY)
     }
 }
