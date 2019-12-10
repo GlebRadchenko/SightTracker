@@ -12,7 +12,9 @@ import SceneKit
 import CoreLocation
 
 extension SCNVector3: Hashable {
-    public var hashValue: Int { return "\(x),\(y),\(z)".hashValue }
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine("\(x),\(y),\(z)")
+    }
 }
 
 extension SCNVector3 {
@@ -101,15 +103,15 @@ public func /= (l: inout  SCNVector3, r: SCNVector3) {
 }
 
 public func min(_ l: SCNVector3, _ r: SCNVector3) -> SCNVector3 {
-    let ld3 = double3(l)
-    let rd3 = double3(r)
+    let ld3 = SIMD3<Double>(l)
+    let rd3 = SIMD3<Double>(r)
     
     return SCNVector3(min(ld3, rd3))
 }
 
 public func max(_ l: SCNVector3, _ r: SCNVector3) -> SCNVector3 {
-    let ld3 = double3(l)
-    let rd3 = double3(r)
+    let ld3 = SIMD3<Double>(l)
+    let rd3 = SIMD3<Double>(r)
     
     return SCNVector3(max(ld3, rd3))
 }
