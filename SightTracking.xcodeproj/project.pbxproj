@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		296FDCCE23FAA32400C86729 /* ConstraintContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FDCCD23FAA32400C86729 /* ConstraintContainer.swift */; };
 		F72BB32621B1A91D005EF53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BB32521B1A91D005EF53F /* AppDelegate.swift */; };
 		F72BB32A21B1A91D005EF53F /* SightTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BB32921B1A91D005EF53F /* SightTrackingViewController.swift */; };
 		F72BB32D21B1A91D005EF53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72BB32B21B1A91D005EF53F /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		296FDCCD23FAA32400C86729 /* ConstraintContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintContainer.swift; sourceTree = "<group>"; };
 		F72BB32221B1A91D005EF53F /* SightTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SightTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72BB32521B1A91D005EF53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F72BB32921B1A91D005EF53F /* SightTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightTrackingViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		296FDCCB23FA9ECF00C86729 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F74C332921B1E2AD009EBF5D /* SCNVector3+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		296FDCCC23FAA03E00C86729 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				296FDCCD23FAA32400C86729 /* ConstraintContainer.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F72BB31921B1A91D005EF53F = {
 			isa = PBXGroup;
 			children = (
@@ -60,7 +78,8 @@
 		F72BB32421B1A91D005EF53F /* SightTracking */ = {
 			isa = PBXGroup;
 			children = (
-				F74C332921B1E2AD009EBF5D /* SCNVector3+Extensions.swift */,
+				296FDCCC23FAA03E00C86729 /* Helpers */,
+				296FDCCB23FA9ECF00C86729 /* Extensions */,
 				F74C332421B1BCD8009EBF5D /* Nodes */,
 				F74C332121B1AD35009EBF5D /* FaceTracker */,
 				F72BB32521B1A91D005EF53F /* AppDelegate.swift */,
@@ -161,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296FDCCE23FAA32400C86729 /* ConstraintContainer.swift in Sources */,
 				F72BB32A21B1A91D005EF53F /* SightTrackingViewController.swift in Sources */,
 				F74C332621B1BCF3009EBF5D /* HeadNode.swift in Sources */,
 				F72BB32621B1A91D005EF53F /* AppDelegate.swift in Sources */,
@@ -314,6 +334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4KR78C5BW2;
 				INFOPLIST_FILE = SightTracking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,6 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4KR78C5BW2;
 				INFOPLIST_FILE = SightTracking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

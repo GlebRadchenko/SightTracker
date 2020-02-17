@@ -14,7 +14,7 @@ class SightTrackingViewController: UIViewController {
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var debugLabel: UILabel!
     
-    let tracker = FaceTracker()
+    private let tracker = FaceTracker()
     
     lazy var pointer: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))

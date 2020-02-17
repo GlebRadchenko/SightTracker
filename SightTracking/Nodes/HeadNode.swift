@@ -13,20 +13,18 @@ import SceneKit
 class Head: SCNNode {
     static var rayLenght: CGFloat = 1
     
-    var leftEye: SCNNode!
-    var leftEyeEnd: SCNNode!
+    lazy var leftEye: SCNNode = .createEye()
+    lazy var leftEyeEnd: SCNNode = .createEndSightNode()
     
-    var rightEye: SCNNode!
-    var rightEyeEnd: SCNNode!
+    lazy var rightEye: SCNNode = .createEye()
+    lazy var rightEyeEnd: SCNNode = .createEndSightNode()
     
-    var leftPupil: SCNNode!
-    var rightPupil: SCNNode!
+    lazy var leftPupil: SCNNode = .createPupil()
+    lazy var rightPupil: SCNNode = .createPupil()
     
     override init() {
         super.init()
-        leftEye = createEye()
-        rightEye = createEye()
-        
+
         addPupils()
         addRays()
         addEndSidePoints()
@@ -34,30 +32,12 @@ class Head: SCNNode {
         addChildNode(rightEye)
     }
     
-    func createEye() -> SCNNode {
-        let eye = SCNNode(geometry: SCNSphere(radius: 0.012))
-        eye.geometry?.firstMaterial?.fillMode = .lines
-        return eye
-    }
-    
     func addEndSidePoints() {
-        leftEyeEnd = endSightNode()
-        rightEyeEnd = endSightNode()
-        
         leftEye.addChildNode(leftEyeEnd)
         rightEye.addChildNode(rightEyeEnd)
     }
     
-    func endSightNode() -> SCNNode {
-        let node = SCNNode(geometry: nil)
-        node.position = SCNVector3(x: 0, y: 0, z: 5)
-        return node
-    }
-    
     fileprivate func addPupils() {
-        leftPupil = createPupil()
-        rightPupil = createPupil()
-        
         leftEye.addChildNode(leftPupil)
         rightEye.addChildNode(rightPupil)
     }
@@ -65,15 +45,6 @@ class Head: SCNNode {
     fileprivate func addRays() {
         addRayIfNeeded(to: leftEye)
         addRayIfNeeded(to: rightEye)
-    }
-    
-    fileprivate func createPupil() -> SCNNode {
-        let pupil = SCNNode(geometry: SCNSphere(radius: 0.005))
-        pupil.geometry?.firstMaterial?.diffuse.contents = UIColor.red
-        pupil.geometry?.firstMaterial?.fillMode = .lines
-        pupil.position = SCNVector3(x: 0, y: 0, z: 0.012)
-    
-        return pupil
     }
     
     fileprivate func addRayIfNeeded(to eyeNode: SCNNode) {
@@ -98,5 +69,28 @@ class Head: SCNNode {
         simdTransform = anchor.transform
         leftEye.simdTransform = anchor.leftEyeTransform
         rightEye.simdTransform = anchor.rightEyeTransform
+    }
+}
+
+private extension SCNNode {
+    static func createEye() -> SCNNode {
+        let eye = SCNNode(geometry: SCNSphere(radius: 0.012))
+        eye.geometry?.firstMaterial?.fillMode = .lines
+        return eye
+    }
+    
+    static func createEndSightNode() -> SCNNode {
+        let node = SCNNode(geometry: nil)
+        node.position = SCNVector3(x: 0, y: 0, z: 5)
+        return node
+    }
+    
+    static func createPupil() -> SCNNode {
+        let pupil = SCNNode(geometry: SCNSphere(radius: 0.005))
+        pupil.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+        pupil.geometry?.firstMaterial?.fillMode = .lines
+        pupil.position = SCNVector3(x: 0, y: 0, z: 0.012)
+    
+        return pupil
     }
 }
