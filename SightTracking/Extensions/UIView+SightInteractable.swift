@@ -14,37 +14,6 @@ protocol SightInteractable: AnyObject {
     func handleSightDefocus()
 }
 
-class SightInteractionHandler {
-    private typealias InteractiveView = UIView & SightInteractable
-    
-    private weak var view: UIView!
-    
-    init(view: UIView) {
-        self.view = view
-    }
-    
-    private var lastFocusedView: InteractiveView?
-    func processSightPoint(_ point: CGPoint) {
-        guard let target = view.hitTest(point, with: nil) as? InteractiveView else {
-            defocusIfNeeded()
-            return
-        }
-        
-        if target !== lastFocusedView {
-            defocusIfNeeded()
-        }
-        
-        let innerPoint = target.convert(point, from: view)
-        target.handleSightFocus(at: innerPoint)
-        lastFocusedView = target
-    }
-    
-    private func defocusIfNeeded() {
-        lastFocusedView?.handleSightDefocus()
-        lastFocusedView = nil
-    }
-}
-
 class Button: UIButton, SightInteractable {
     func handleSightFocus(at point: CGPoint) {
         UIView.animate(withDuration: 0.1) {

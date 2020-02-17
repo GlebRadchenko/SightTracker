@@ -44,7 +44,8 @@ class SightTrackingViewController: UIViewController {
     
     private func addSceneView() {
         view.addSubview(sceneView)
-        sceneView.alpha = 0
+        view.sendSubviewToBack(sceneView)
+        sceneView.alpha = 0.5
         sceneView.translatesAutoresizingMaskIntoConstraints = false
         sceneViewConstraints.activate()
     }

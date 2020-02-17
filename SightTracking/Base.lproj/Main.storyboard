@@ -8,20 +8,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sight Tracking View Controller-->
+        <!--Example View Controller-->
         <scene sceneID="mb2-4a-asO">
             <objects>
-                <viewController id="ICb-LP-fwn" customClass="SightTrackingViewController" customModule="SightTracking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ICb-LP-fwn" customClass="ExampleViewController" customModule="SightTracking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="imp-0Q-zcG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNX-aa-7XO" customClass="Button" customModule="SightTracking" customModuleProvider="target">
+                                <rect key="frame" x="109" y="315" width="157" height="37"/>
+                                <color key="backgroundColor" red="0.71827528429999998" green="0.70761870069999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="cc3-A3-GiU"/>
+                                    <constraint firstAttribute="height" constant="37" id="xMA-Ld-T7f"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eNX-aa-7XO" firstAttribute="centerX" secondItem="Bco-Mn-Z9n" secondAttribute="centerX" id="AkD-Zz-f8n"/>
+                            <constraint firstItem="eNX-aa-7XO" firstAttribute="centerY" secondItem="Bco-Mn-Z9n" secondAttribute="centerY" id="Rzb-JF-xC8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bco-Mn-Z9n"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmG-Cc-66M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169" y="115"/>
+            <point key="canvasLocation" x="-95.200000000000003" y="71.514242878560722"/>
         </scene>
     </scenes>
 </document>
