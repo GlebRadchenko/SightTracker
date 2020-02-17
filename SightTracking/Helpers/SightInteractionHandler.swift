@@ -34,6 +34,23 @@ class SightInteractionHandler {
         lastFocusedView = target
     }
     
+    private lazy var eventHandler: (FaceExpressionEvent) -> Void = throttle(delay: 1) { [weak self] event in
+        self?.commit(event)
+    }
+    
+    func handleFaceExpressionEvent(_ event: FaceExpressionEvent) {
+        eventHandler(event)
+    }
+    
+    private func commit(_ event: FaceExpressionEvent) {
+        guard event == .smile else { return }
+        guard let focusedView = lastFocusedView else { return }
+
+        if let control = focusedView as? UIControl {
+            control.sendActions(for: .touchUpInside)
+        }
+    }
+    
     private func defocusIfNeeded() {
         lastFocusedView?.handleSightDefocus()
         lastFocusedView = nil

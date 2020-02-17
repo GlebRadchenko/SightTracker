@@ -24,6 +24,12 @@ class SightTrackingViewController: UIViewController {
                 self?.handleNextSightPoint(point.adjustedToScreenBounds())
             }
         }
+        
+        tracker.onFaceEvent = { [weak self] event in
+            DispatchQueue.main.async {
+                self?.handleFaceExpressionEvent(event)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,10 +48,14 @@ class SightTrackingViewController: UIViewController {
         
     }
     
+    func handleFaceExpressionEvent(_ event: FaceExpressionEvent) {
+        
+    }
+    
     private func addSceneView() {
         view.addSubview(sceneView)
         view.sendSubviewToBack(sceneView)
-        sceneView.alpha = 0.5
+        sceneView.alpha = 0
         sceneView.translatesAutoresizingMaskIntoConstraints = false
         sceneViewConstraints.activate()
     }

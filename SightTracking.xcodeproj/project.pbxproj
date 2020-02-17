@@ -12,6 +12,7 @@
 		296FDCD323FAABD900C86729 /* UIView+SightInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FDCD223FAABD900C86729 /* UIView+SightInteractable.swift */; };
 		296FDCD523FAAFFF00C86729 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FDCD423FAAFFF00C86729 /* ExampleViewController.swift */; };
 		296FDCD723FAB03A00C86729 /* SightInteractionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FDCD623FAB03A00C86729 /* SightInteractionHandler.swift */; };
+		296FDCD923FADF7E00C86729 /* Wrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FDCD823FADF7E00C86729 /* Wrappers.swift */; };
 		F72BB32621B1A91D005EF53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BB32521B1A91D005EF53F /* AppDelegate.swift */; };
 		F72BB32A21B1A91D005EF53F /* SightTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BB32921B1A91D005EF53F /* SightTrackingViewController.swift */; };
 		F72BB32D21B1A91D005EF53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72BB32B21B1A91D005EF53F /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		296FDCD223FAABD900C86729 /* UIView+SightInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SightInteractable.swift"; sourceTree = "<group>"; };
 		296FDCD423FAAFFF00C86729 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		296FDCD623FAB03A00C86729 /* SightInteractionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightInteractionHandler.swift; sourceTree = "<group>"; };
+		296FDCD823FADF7E00C86729 /* Wrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrappers.swift; sourceTree = "<group>"; };
 		F72BB32221B1A91D005EF53F /* SightTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SightTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72BB32521B1A91D005EF53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F72BB32921B1A91D005EF53F /* SightTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightTrackingViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				F74C332921B1E2AD009EBF5D /* SCNVector3+Extensions.swift */,
 				296FDCD223FAABD900C86729 /* UIView+SightInteractable.swift */,
+				296FDCD823FADF7E00C86729 /* Wrappers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				296FDCD323FAABD900C86729 /* UIView+SightInteractable.swift in Sources */,
 				F74C332621B1BCF3009EBF5D /* HeadNode.swift in Sources */,
 				F72BB32621B1A91D005EF53F /* AppDelegate.swift in Sources */,
+				296FDCD923FADF7E00C86729 /* Wrappers.swift in Sources */,
 				296FDCD723FAB03A00C86729 /* SightInteractionHandler.swift in Sources */,
 				F74C332321B1AD45009EBF5D /* FaceTracker.swift in Sources */,
 				296FDCD123FAA56C00C86729 /* CircullarBuffer.swift in Sources */,

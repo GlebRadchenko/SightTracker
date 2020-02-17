@@ -16,22 +16,147 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNX-aa-7XO" customClass="Button" customModule="SightTracking" customModuleProvider="target">
-                                <rect key="frame" x="109" y="315" width="157" height="37"/>
-                                <color key="backgroundColor" red="0.71827528429999998" green="0.70761870069999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bIV-va-YdR">
+                                <rect key="frame" x="62.5" y="167" width="250" height="333.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR0-Wf-QJg" customClass="Button" customModule="SightTracking" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="37"/>
+                                        <color key="backgroundColor" red="0.71827528429999998" green="0.70761870069999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="tBl-6O-Pin"/>
+                                        </constraints>
+                                        <state key="normal" title="Button 1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleTap:" destination="ICb-LP-fwn" eventType="touchUpInside" id="VTd-t7-UTw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32P-4O-iar" customClass="Button" customModule="SightTracking" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="74" width="250" height="37"/>
+                                        <color key="backgroundColor" red="0.71827528429999998" green="0.70761870069999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="CQE-yz-Phq"/>
+                                        </constraints>
+                                        <state key="normal" title="Button 2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleTap:" destination="ICb-LP-fwn" eventType="touchUpInside" id="8HT-7f-XDd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23o-eW-iKR" customClass="Button" customModule="SightTracking" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="148" width="250" height="37"/>
+                                        <color key="backgroundColor" red="0.71827528429999998" green="0.70761870069999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="wjC-o0-vNU"/>
+                                        </constraints>
+                                        <state key="normal" title="Button 3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleTap:" destination="ICb-LP-fwn" eventType="touchUpInside" id="wGT-Y2-ZM9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hms-Wu-1wH" customClass="Button" customModule="SightTracking" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="222" width="250" height="37"/>
+                                        <color key="backgroundColor" red="0.71827528429999998" green="0.70761870069999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="hVU-Ds-FDH"/>
+                                        </constraints>
+                                        <state key="normal" title="Button 4">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleTap:" destination="ICb-LP-fwn" eventType="touchUpInside" id="ri9-WT-guT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqN-bu-IIb" customClass="Button" customModule="SightTracking" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="296.5" width="250" height="37"/>
+                                        <color key="backgroundColor" red="0.71827528429999998" green="0.70761870069999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="KFE-cP-4mo"/>
+                                        </constraints>
+                                        <state key="normal" title="Button 5">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleTap:" destination="ICb-LP-fwn" eventType="touchUpInside" id="1TN-qK-HBG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIt-wQ-lo7" customClass="Button" customModule="SightTracking" customModuleProvider="target">
+                                <rect key="frame" x="327" y="16" width="32" height="32"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="157" id="cc3-A3-GiU"/>
-                                    <constraint firstAttribute="height" constant="37" id="xMA-Ld-T7f"/>
+                                    <constraint firstAttribute="height" constant="32" id="oSk-cl-9Xd"/>
+                                    <constraint firstAttribute="width" constant="32" id="zqj-WQ-rk7"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleTap:" destination="ICb-LP-fwn" eventType="touchUpInside" id="bNc-FJ-maD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T86-ww-vCQ" customClass="Button" customModule="SightTracking" customModuleProvider="target">
+                                <rect key="frame" x="16" y="16" width="32" height="32"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="BtW-l5-F1m"/>
+                                    <constraint firstAttribute="width" constant="32" id="rHL-34-IFV"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTap:" destination="ICb-LP-fwn" eventType="touchUpInside" id="IrW-8l-ulP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcv-2f-bhQ" customClass="Button" customModule="SightTracking" customModuleProvider="target">
+                                <rect key="frame" x="16" y="619" width="32" height="32"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="n6p-MS-Xx0"/>
+                                    <constraint firstAttribute="width" constant="32" id="nKs-sw-j6G"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTap:" destination="ICb-LP-fwn" eventType="touchUpInside" id="Nrg-pg-3Ti"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXv-Cj-t05" customClass="Button" customModule="SightTracking" customModuleProvider="target">
+                                <rect key="frame" x="327" y="619" width="32" height="32"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Uq1-Xq-kLD"/>
+                                    <constraint firstAttribute="height" constant="32" id="YME-z1-u15"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTap:" destination="ICb-LP-fwn" eventType="touchUpInside" id="6Gs-jF-hIi"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eNX-aa-7XO" firstAttribute="centerX" secondItem="Bco-Mn-Z9n" secondAttribute="centerX" id="AkD-Zz-f8n"/>
-                            <constraint firstItem="eNX-aa-7XO" firstAttribute="centerY" secondItem="Bco-Mn-Z9n" secondAttribute="centerY" id="Rzb-JF-xC8"/>
+                            <constraint firstItem="zcv-2f-bhQ" firstAttribute="leading" secondItem="Bco-Mn-Z9n" secondAttribute="leading" constant="16" id="4kb-hi-hoY"/>
+                            <constraint firstItem="Bco-Mn-Z9n" firstAttribute="trailing" secondItem="JXv-Cj-t05" secondAttribute="trailing" constant="16" id="5zy-HJ-fmE"/>
+                            <constraint firstItem="T86-ww-vCQ" firstAttribute="leading" secondItem="Bco-Mn-Z9n" secondAttribute="leading" constant="16" id="AJR-0v-q5w"/>
+                            <constraint firstItem="bIV-va-YdR" firstAttribute="width" secondItem="imp-0Q-zcG" secondAttribute="width" multiplier="2/3" id="ASQ-Mv-yXH"/>
+                            <constraint firstItem="Bco-Mn-Z9n" firstAttribute="bottom" secondItem="JXv-Cj-t05" secondAttribute="bottom" constant="16" id="FMK-Qd-9uS"/>
+                            <constraint firstItem="Bco-Mn-Z9n" firstAttribute="trailing" secondItem="wIt-wQ-lo7" secondAttribute="trailing" constant="16" id="Vre-vc-xlv"/>
+                            <constraint firstItem="T86-ww-vCQ" firstAttribute="top" secondItem="Bco-Mn-Z9n" secondAttribute="top" constant="16" id="Zuw-n2-B2Z"/>
+                            <constraint firstItem="wIt-wQ-lo7" firstAttribute="top" secondItem="Bco-Mn-Z9n" secondAttribute="top" constant="16" id="dNS-qd-VOD"/>
+                            <constraint firstItem="bIV-va-YdR" firstAttribute="height" secondItem="imp-0Q-zcG" secondAttribute="height" multiplier="1/2" id="gQy-J7-mTJ"/>
+                            <constraint firstItem="Bco-Mn-Z9n" firstAttribute="bottom" secondItem="zcv-2f-bhQ" secondAttribute="bottom" constant="16" id="hvI-pU-cPJ"/>
+                            <constraint firstItem="bIV-va-YdR" firstAttribute="centerX" secondItem="Bco-Mn-Z9n" secondAttribute="centerX" id="k4D-AZ-8DT"/>
+                            <constraint firstItem="bIV-va-YdR" firstAttribute="centerY" secondItem="Bco-Mn-Z9n" secondAttribute="centerY" id="sxL-AZ-E4I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bco-Mn-Z9n"/>
                     </view>

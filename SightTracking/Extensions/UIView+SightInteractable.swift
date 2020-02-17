@@ -15,10 +15,18 @@ protocol SightInteractable: AnyObject {
 }
 
 class Button: UIButton, SightInteractable {
+    private var timer: Timer?
+
     func handleSightFocus(at point: CGPoint) {
         UIView.animate(withDuration: 0.1) {
             self.alpha = 0.9
             self.transform = .init(scaleX: 1.1, y: 1.1)
+        }
+        
+        if timer == nil {
+            timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { [weak self] _ in
+                self?.sendActions(for: .touchUpInside)
+            }
         }
     }
     
@@ -27,6 +35,18 @@ class Button: UIButton, SightInteractable {
             self.alpha = 1
             self.transform = .identity
         }
+        
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if super.point(inside: point, with: event) {
+            return true
+        }
+
+        let expandedArea = bounds.insetBy(dx: -10, dy: -10)
+        return expandedArea.contains(point)
     }
 }
 
@@ -43,6 +63,15 @@ class Label: UILabel, SightInteractable {
             self.alpha = 1
             self.transform = .identity
         }
+    }
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if super.point(inside: point, with: event) {
+            return true
+        }
+
+        let expandedArea = bounds.insetBy(dx: -10, dy: -10)
+        return expandedArea.contains(point)
     }
 }
 

@@ -10,10 +10,17 @@ import Foundation
 import ARKit
 import SceneKit
 
+enum FaceExpressionEvent: Hashable {
+    case smile
+    case blinkLeft
+    case blinkRight
+}
+
 class FaceTracker {
     weak var view: ARSCNView!
     
     var onNextPoint: ((CGPoint) -> Void)?
+    var onFaceEvent: ((FaceExpressionEvent) -> Void)?
     
     var pointOfView: SCNNode? {
         return view?.pointOfView
@@ -65,7 +72,7 @@ class FaceTracker {
         view.scene.rootNode.addChildNode(head)
         view.scene.rootNode.addChildNode(focusNode)
     }
-    
+
     func updateNode(_ node: SCNNode, for anchor: ARFaceAnchor) {
         self.currentFaceNode = node
         self.currentFaceAnchor = anchor
@@ -76,6 +83,7 @@ class FaceTracker {
         
         geometry.update(from: anchor.geometry)
         head.update(withFaceAnchor: anchor)
+        sendFaceEvents(for: anchor)
     }
     
     func update(with rendered: SCNSceneRenderer) {
@@ -99,6 +107,12 @@ class FaceTracker {
         
         if buffer.isFull {
             onNextPoint?(buffer.average.cgPoint())
+        }
+    }
+    
+    private func sendFaceEvents(for anchor: ARFaceAnchor) {
+        anchor.faceEvents.forEach { event in
+            onFaceEvent?(event)
         }
     }
 }
@@ -156,5 +170,29 @@ extension CGPoint {
         let newY = max(min(y, bounds.height), 0)
         
         return CGPoint(x: newX, y: newY)
+    }
+}
+
+private extension ARFaceAnchor {
+    var faceEvents: Set<FaceExpressionEvent> {
+        var events: Set<FaceExpressionEvent> = []
+        
+        if let value = blendShapes[.mouthSmileLeft]?.floatValue, value > 0.5 {
+            events.insert(.smile)
+        }
+        
+        if let value = blendShapes[.mouthSmileRight]?.floatValue, value > 0.5 {
+            events.insert(.smile)
+        }
+        
+        if let value = blendShapes[.eyeBlinkLeft]?.floatValue, value > 0.5 {
+            events.insert(.blinkLeft)
+        }
+        
+        if let value = blendShapes[.eyeBlinkRight]?.floatValue, value > 0.5 {
+            events.insert(.blinkRight)
+        }
+        
+        return events
     }
 }
