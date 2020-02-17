@@ -11,29 +11,19 @@ import SceneKit
 import ARKit
 
 class SightTrackingViewController: UIViewController {
-    @IBOutlet var sceneView: ARSCNView!
-    @IBOutlet weak var debugLabel: UILabel!
-    
+    private lazy var sceneView: ARSCNView = ARSCNView()
     private let tracker = FaceTracker()
-    
-    lazy var pointer: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-        view.layer.cornerRadius = 16
-        view.backgroundColor = .blue
-        return view
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        sceneView.delegate = self
-        sceneView.showsStatistics = true
-        
-        sceneView.addSubview(pointer)
-        
-        tracker.configure(with: sceneView)
-        tracker.debugLabel = debugLabel
-        tracker.pointer = pointer
+        addSceneView()
+        configureSceneView()
+
+        tracker.onNextPoint = { [weak self] point in
+            DispatchQueue.main.async {
+                self?.handleNextSightPoint(point.adjustedToScreenBounds())
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +37,33 @@ class SightTrackingViewController: UIViewController {
         super.viewWillDisappear(animated)
         sceneView.session.pause()
     }
+    
+    func handleNextSightPoint(_ point: CGPoint) {
+        
+    }
+    
+    private func addSceneView() {
+        view.addSubview(sceneView)
+        sceneView.alpha = 0
+        sceneView.translatesAutoresizingMaskIntoConstraints = false
+        sceneViewConstraints.activate()
+    }
+    
+    private func configureSceneView() {
+        sceneView.delegate = self
+        sceneView.showsStatistics = true
+        
+        tracker.configure(with: sceneView)
+    }
+    
+    // MARK: - Constraints
+    
+    private lazy var sceneViewConstraints = ConstraintContainer(
+        leading: sceneView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        trailing: sceneView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        top: sceneView.topAnchor.constraint(equalTo: view.topAnchor),
+        bottom: sceneView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+    )
 }
 
 extension SightTrackingViewController: ARSCNViewDelegate {

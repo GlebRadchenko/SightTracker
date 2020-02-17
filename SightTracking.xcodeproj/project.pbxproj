@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		296FDCCE23FAA32400C86729 /* ConstraintContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FDCCD23FAA32400C86729 /* ConstraintContainer.swift */; };
+		296FDCD123FAA56C00C86729 /* CircullarBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FDCD023FAA56C00C86729 /* CircullarBuffer.swift */; };
+		296FDCD323FAABD900C86729 /* UIView+SightInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FDCD223FAABD900C86729 /* UIView+SightInteractable.swift */; };
 		F72BB32621B1A91D005EF53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BB32521B1A91D005EF53F /* AppDelegate.swift */; };
 		F72BB32A21B1A91D005EF53F /* SightTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BB32921B1A91D005EF53F /* SightTrackingViewController.swift */; };
 		F72BB32D21B1A91D005EF53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72BB32B21B1A91D005EF53F /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		296FDCCD23FAA32400C86729 /* ConstraintContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintContainer.swift; sourceTree = "<group>"; };
+		296FDCD023FAA56C00C86729 /* CircullarBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircullarBuffer.swift; sourceTree = "<group>"; };
+		296FDCD223FAABD900C86729 /* UIView+SightInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SightInteractable.swift"; sourceTree = "<group>"; };
 		F72BB32221B1A91D005EF53F /* SightTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SightTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72BB32521B1A91D005EF53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F72BB32921B1A91D005EF53F /* SightTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightTrackingViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				F74C332921B1E2AD009EBF5D /* SCNVector3+Extensions.swift */,
+				296FDCD223FAABD900C86729 /* UIView+SightInteractable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -55,8 +60,17 @@
 			isa = PBXGroup;
 			children = (
 				296FDCCD23FAA32400C86729 /* ConstraintContainer.swift */,
+				296FDCD023FAA56C00C86729 /* CircullarBuffer.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		296FDCCF23FAA38000C86729 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F72BB32921B1A91D005EF53F /* SightTrackingViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		F72BB31921B1A91D005EF53F = {
@@ -78,12 +92,12 @@
 		F72BB32421B1A91D005EF53F /* SightTracking */ = {
 			isa = PBXGroup;
 			children = (
+				296FDCCF23FAA38000C86729 /* ViewControllers */,
 				296FDCCC23FAA03E00C86729 /* Helpers */,
 				296FDCCB23FA9ECF00C86729 /* Extensions */,
 				F74C332421B1BCD8009EBF5D /* Nodes */,
 				F74C332121B1AD35009EBF5D /* FaceTracker */,
 				F72BB32521B1A91D005EF53F /* AppDelegate.swift */,
-				F72BB32921B1A91D005EF53F /* SightTrackingViewController.swift */,
 				F72BB32B21B1A91D005EF53F /* Main.storyboard */,
 				F72BB32E21B1A91F005EF53F /* Assets.xcassets */,
 				F72BB33021B1A91F005EF53F /* LaunchScreen.storyboard */,
@@ -182,9 +196,11 @@
 			files = (
 				296FDCCE23FAA32400C86729 /* ConstraintContainer.swift in Sources */,
 				F72BB32A21B1A91D005EF53F /* SightTrackingViewController.swift in Sources */,
+				296FDCD323FAABD900C86729 /* UIView+SightInteractable.swift in Sources */,
 				F74C332621B1BCF3009EBF5D /* HeadNode.swift in Sources */,
 				F72BB32621B1A91D005EF53F /* AppDelegate.swift in Sources */,
 				F74C332321B1AD45009EBF5D /* FaceTracker.swift in Sources */,
+				296FDCD123FAA56C00C86729 /* CircullarBuffer.swift in Sources */,
 				F74C332A21B1E2AD009EBF5D /* SCNVector3+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

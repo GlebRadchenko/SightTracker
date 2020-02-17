@@ -12,8 +12,8 @@ import SceneKit
 
 class FaceTracker {
     weak var view: ARSCNView!
-    weak var debugLabel: UILabel?
-    weak var pointer: UIView?
+    
+    var onNextPoint: ((CGPoint) -> Void)?
     
     var pointOfView: SCNNode? {
         return view?.pointOfView
@@ -89,36 +89,16 @@ class FaceTracker {
         process(l: lEyeHitTest, r: rEyeHitTest)
     }
     
-    var points: [SCNVector3] = []
+    private let buffer = CircularBuffer<SCNVector3>()
     
     fileprivate func process(l: SCNHitTestResult, r: SCNHitTestResult) {
         let middle = (l.worldCoordinates + r.worldCoordinates) / 2
         focusNode.position = middle
         
-        points.append(view.projectPoint(middle))
+        buffer + view.projectPoint(middle)
         
-        if points.count >= 30 {
-            dequeuePoints()
-        }
-    }
-    
-    fileprivate func dequeuePoints() {
-        let point = points.reduce(SCNVector3.zero, +) / Float(points.count)
-        
-        let cgPoint = point.cgPoint()
-        
-        debug(text: "x: \(Int(cgPoint.x)), y: \(Int(cgPoint.y))")
-        DispatchQueue.main.async {
-            self.pointer?.center = cgPoint.adjustedToScreenBounds()
-        }
-        
-        
-        points.removeFirst(5)
-    }
-    
-    fileprivate func debug(text: String) {
-        DispatchQueue.main.async {
-            self.debugLabel?.text = text
+        if buffer.isFull {
+            onNextPoint?(buffer.average.cgPoint())
         }
     }
 }
