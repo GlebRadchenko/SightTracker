@@ -45,32 +45,7 @@ class Button: UIButton, SightInteractable {
             return true
         }
 
-        let expandedArea = bounds.insetBy(dx: -10, dy: -10)
-        return expandedArea.contains(point)
-    }
-}
-
-class Label: UILabel, SightInteractable {
-    func handleSightFocus(at point: CGPoint) {
-        UIView.animate(withDuration: 0.1) {
-            self.alpha = 0.9
-            self.transform = .init(scaleX: 1.1, y: 1.1)
-        }
-    }
-    
-    func handleSightDefocus() {
-        UIView.animate(withDuration: 0.1) {
-            self.alpha = 1
-            self.transform = .identity
-        }
-    }
-    
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        if super.point(inside: point, with: event) {
-            return true
-        }
-
-        let expandedArea = bounds.insetBy(dx: -10, dy: -10)
+        let expandedArea = bounds.insetBy(dx: -20, dy: -20)
         return expandedArea.contains(point)
     }
 }

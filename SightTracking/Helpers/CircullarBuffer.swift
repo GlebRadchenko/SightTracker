@@ -23,7 +23,7 @@ class CircularBuffer<T: CircularBufferElementType> {
     var average: T { array.reduce(.zero, +) / Float(array.count) }
     var isFull: Bool { size == array.count }
     
-    init(size: Int = 50, dequeueCount: Int = 5) {
+    init(size: Int = 30, dequeueCount: Int = 5) {
         self.size = size
         self.dequeueCount = dequeueCount
     }

@@ -9,6 +9,8 @@
 import UIKit
 
 class ExampleViewController: SightTrackingViewController {
+    @IBOutlet weak var statusLabel: UILabel!
+
     lazy var interactionHandler = SightInteractionHandler(view: view)
     lazy var pointer: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
@@ -33,6 +35,7 @@ class ExampleViewController: SightTrackingViewController {
     }
     
     @IBAction func handleTap(_ sender: Button) {
-        print(sender.titleLabel?.text ?? "")
+        let text = sender.titleLabel?.text ?? "corner"
+        statusLabel.text = text + " button tapped"
     }
 }

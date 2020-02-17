@@ -142,14 +142,23 @@
                                     <action selector="handleTap:" destination="ICb-LP-fwn" eventType="touchUpInside" id="6Gs-jF-hIi"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12p-gN-QpV">
+                                <rect key="frame" x="8" y="127" width="359" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zcv-2f-bhQ" firstAttribute="leading" secondItem="Bco-Mn-Z9n" secondAttribute="leading" constant="16" id="4kb-hi-hoY"/>
                             <constraint firstItem="Bco-Mn-Z9n" firstAttribute="trailing" secondItem="JXv-Cj-t05" secondAttribute="trailing" constant="16" id="5zy-HJ-fmE"/>
+                            <constraint firstItem="Bco-Mn-Z9n" firstAttribute="trailing" secondItem="12p-gN-QpV" secondAttribute="trailing" constant="8" id="8Od-yZ-YA1"/>
                             <constraint firstItem="T86-ww-vCQ" firstAttribute="leading" secondItem="Bco-Mn-Z9n" secondAttribute="leading" constant="16" id="AJR-0v-q5w"/>
                             <constraint firstItem="bIV-va-YdR" firstAttribute="width" secondItem="imp-0Q-zcG" secondAttribute="width" multiplier="2/3" id="ASQ-Mv-yXH"/>
+                            <constraint firstItem="12p-gN-QpV" firstAttribute="leading" secondItem="Bco-Mn-Z9n" secondAttribute="leading" constant="8" id="CFV-HH-rGV"/>
                             <constraint firstItem="Bco-Mn-Z9n" firstAttribute="bottom" secondItem="JXv-Cj-t05" secondAttribute="bottom" constant="16" id="FMK-Qd-9uS"/>
+                            <constraint firstItem="bIV-va-YdR" firstAttribute="top" secondItem="12p-gN-QpV" secondAttribute="bottom" constant="16" id="Tff-ce-wnV"/>
                             <constraint firstItem="Bco-Mn-Z9n" firstAttribute="trailing" secondItem="wIt-wQ-lo7" secondAttribute="trailing" constant="16" id="Vre-vc-xlv"/>
                             <constraint firstItem="T86-ww-vCQ" firstAttribute="top" secondItem="Bco-Mn-Z9n" secondAttribute="top" constant="16" id="Zuw-n2-B2Z"/>
                             <constraint firstItem="wIt-wQ-lo7" firstAttribute="top" secondItem="Bco-Mn-Z9n" secondAttribute="top" constant="16" id="dNS-qd-VOD"/>
@@ -160,6 +169,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bco-Mn-Z9n"/>
                     </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="12p-gN-QpV" id="xw7-Ie-mY7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmG-Cc-66M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
